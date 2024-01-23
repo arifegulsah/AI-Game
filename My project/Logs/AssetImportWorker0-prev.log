@@ -1,0 +1,221 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.7f1 (d91830b65d9b) revision 14227504'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 22631.3007; Version 2009; 64bit' Language: 'tr' Physical Memory: 8008 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/arife/Documents/GITHUB/AI Game/My project
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+53448
+Successfully changed project path to: C:/Users/arife/Documents/GITHUB/AI Game/My project
+C:/Users/arife/Documents/GITHUB/AI Game/My project
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 61.41 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.7f1 (d91830b65d9b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/arife/Documents/GITHUB/AI Game/My project/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
+    Vendor:   NVIDIA
+    VRAM:     5979 MB
+    Driver:   31.0.15.4633
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001088 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 65.03 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.199 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001918 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\arife\Documents\GITHUB\AI Game\My project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\arife\Documents\GITHUB\AI Game\My project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.838 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2548 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.0 MB.
+System memory in use after: 95.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 3002.
+Total: 1.771600 ms (FindLiveObjects: 0.206900 ms CreateObjectMapping: 0.123400 ms MarkObjects: 1.389500 ms  DeleteObjects: 0.050700 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42d402b061de3733987d63b9cc3b64de') in 0.008683 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(26fe0bbb94052b8468f5c435010ed84d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(26fe0bbb94052b8468f5c435010ed84d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d80f569cd945abef8cb31b34b9c872d') in 0.006025 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.334520 seconds.
+  path: Assets/Packages
+  artifactKey: Guid(410b380d6787f49448de7db60d8438bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages using Guid(410b380d6787f49448de7db60d8438bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f5a662c0b7c168ef52570a1a3166563') in 0.012009 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.961050 seconds.
+  path: Assets/_Udemy Racer Assets
+  artifactKey: Guid(b43633e6e064cf648a4d4e685cea6c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Udemy Racer Assets using Guid(b43633e6e064cf648a4d4e685cea6c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eba9e2a359573bf20d8bad95d7d31b82') in 0.010289 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 150.251012 seconds.
+  path: Assets/Imports
+  artifactKey: Guid(410b380d6787f49448de7db60d8438bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports using Guid(410b380d6787f49448de7db60d8438bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1c298819eeb36651ce9a89f4089f030') in 0.012285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.908333 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Art
+  artifactKey: Guid(29f6c6f31aa871a4884fc26a0e84a270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Art using Guid(29f6c6f31aa871a4884fc26a0e84a270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb8dcb670a5d5ccadc5ad8ccd4d90057') in 0.010441 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.485818 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Audio
+  artifactKey: Guid(749187245ae65f54fb90ae39214bcffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Audio using Guid(749187245ae65f54fb90ae39214bcffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '254f51a2ef8b014617288a7903829687') in 0.009014 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.741017 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Art/UI_Button_Hover-Selected.png
+  artifactKey: Guid(fe50a84cb2e647444bc8564a25c0cdf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Art/UI_Button_Hover-Selected.png using Guid(fe50a84cb2e647444bc8564a25c0cdf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b20328498df6960bf760a8e10da4848a') in 0.141321 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.092219 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Art/UI_Button_Pressed.png
+  artifactKey: Guid(b8df18a895b653b4db31b18be9bb19aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Art/UI_Button_Pressed.png using Guid(b8df18a895b653b4db31b18be9bb19aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0fe77e4f7bfddca8b10790b8b5f73e0') in 0.020239 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 459.325045 seconds.
+  path: Assets/Materials
+  artifactKey: Guid(064c477d7ae110a48b78408f0d2c6060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials using Guid(064c477d7ae110a48b78408f0d2c6060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7acf0ef09998f8d8c3a16b9f6717c0eb') in 0.009951 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 223.719005 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadStart.fbx
+  artifactKey: Guid(125d84fcdf2dc5442aaa6cbaf06d0d8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadStart.fbx using Guid(125d84fcdf2dc5442aaa6cbaf06d0d8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '699e2ad6584944cfaf1866ad8dae1ef6') in 0.094205 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.485654 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadStartPositions.fbx
+  artifactKey: Guid(81e103468d40b7440b7fe252c1e2d6f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadStartPositions.fbx using Guid(81e103468d40b7440b7fe252c1e2d6f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1818dd779ab94f7547192dc6078465db') in 0.035771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.307947 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadStraightBridgeStart.fbx
+  artifactKey: Guid(295661126d5bce643a2a806827b26bf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadStraightBridgeStart.fbx using Guid(295661126d5bce643a2a806827b26bf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23fd726d1d1f10bcfc3558639360d600') in 0.036943 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.953866 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadStraightBridgeMid.fbx
+  artifactKey: Guid(1696d7d3615b94f4cb689a02c7d59c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadStraightBridgeMid.fbx using Guid(1696d7d3615b94f4cb689a02c7d59c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44a227f5832f97fed4ab144088c1f7b1') in 0.034080 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.293746 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadStraight.fbx
+  artifactKey: Guid(4243275ff5130a5438ef97223ee76672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadStraight.fbx using Guid(4243275ff5130a5438ef97223ee76672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27f07421f8e810b6c47887abb054789b') in 0.045906 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.238805 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadSplitSmall.fbx
+  artifactKey: Guid(a4a0d6b2bfd908f4985ae805d08af2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadSplitSmall.fbx using Guid(a4a0d6b2bfd908f4985ae805d08af2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b648ebea76f211bbb7f755e9c865108') in 0.040814 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.258469 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadSplitLarger.fbx
+  artifactKey: Guid(12a7d69ebdb49034ea790f8e1a3bcccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadSplitLarger.fbx using Guid(12a7d69ebdb49034ea790f8e1a3bcccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4342ec6926bb38e686526331fd1c6d5f') in 0.050920 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.240863 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadRampWall.fbx
+  artifactKey: Guid(f687edc5ce40ea74aafedc6855ac7291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadRampWall.fbx using Guid(f687edc5ce40ea74aafedc6855ac7291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '515c51170e7874fc05d24dd19f422e9b') in 0.039396 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.705163 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadCornerSmallWall.fbx
+  artifactKey: Guid(2ba34d22018d5b14eb796def6e2c8cc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadCornerSmallWall.fbx using Guid(2ba34d22018d5b14eb796def6e2c8cc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d2e83dc747eae2b3a8940da221c06d8') in 0.031140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.254911 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadCornerSmallSand.fbx
+  artifactKey: Guid(73e737b1afe73bf45ac31dc0df9d49e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/roadCornerSmallSand.fbx using Guid(73e737b1afe73bf45ac31dc0df9d49e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76ee0c1269460b70dc7b472f7a203a1d') in 0.029751 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.524201 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/grandStand.fbx
+  artifactKey: Guid(ea135b5535d07804488c1ba38b6da7ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/grandStand.fbx using Guid(ea135b5535d07804488c1ba38b6da7ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce8941d1af77fadaa0760c147a863ed2') in 0.038513 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.257531 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/flagTankco.fbx
+  artifactKey: Guid(efc54bc4da65e474cb89091e229ac764) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/flagTankco.fbx using Guid(efc54bc4da65e474cb89091e229ac764) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a88c5ea7eba190dd3a2816cb86d3e55') in 0.043001 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.006041 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/Textures
+  artifactKey: Guid(13768dbe62392d94693182f93f65885a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/Textures using Guid(13768dbe62392d94693182f93f65885a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '969c566821ddd9a5a02e72104f9c1e12') in 0.011632 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.103454 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/tent.fbx
+  artifactKey: Guid(0769671249457974c84835bed83b242b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/tent.fbx using Guid(0769671249457974c84835bed83b242b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0badcca02c9d673a23f9a06b8d3a700e') in 0.036834 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.793869 seconds.
+  path: Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/grandStandAwning.fbx
+  artifactKey: Guid(19c6bcf1bfb17e146847b0c124c89067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/_Udemy Racer Assets/Models/Kenney/Racing Kit/grandStandAwning.fbx using Guid(19c6bcf1bfb17e146847b0c124c89067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3df901b95dda42d7fd6ca6e71ba3b4ad') in 0.038865 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

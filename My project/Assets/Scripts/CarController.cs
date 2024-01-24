@@ -33,34 +33,97 @@ public class CarController : MonoBehaviour
     public AudioSource engineSound, tireSound;
     public float tireFadeSpeed;
 
+    private int nextCheckPoint;
+    public int currentLap;
+
+    public bool isAI;
+
+    public int currentTarget; //AI arabalar için
+    private Vector3 targetPoint;
+    public float aiAccelerateSpeed = 1f, aiTurnSpeed = .8f, aiReachPointRange = 5f, aiPointVariance = 3f, aiMaxTurn = 15f;
+    //           ivmeleri              , dönerken yavasla , rangee girince next point hesapla yoksa hepsi ayný ilerler.  
+    private float aiSpeedInput;
+
     public void Start()
     {
         theRB.transform.parent = null; //spherein frame basýna ekstra ilerlemesini engellemek için
 
         dragOnGround = theRB.drag;
+        
+        if (isAI) //baþlangýç noktasý ilk checkpointi ele al.
+        {
+            targetPoint = RaceManager.instance.allCheckPoints[currentTarget].transform.position;
+            RandomiseAITarget();
+        }
 
+        UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
     }
     public void Update() //oyuncular için visual yani görünür her saniye. bu yüzden position iþleri burada olmalý. 1 sn default
     {
-        //Ýleri geri movement için
-        speedInput = 0f;
-
-        if (Input.GetAxis("Vertical") > 0)
+        if (!isAI) //Biizm araba için, klavyeden alýnan inputlar sadece main car için not for AI car
         {
-            speedInput = Input.GetAxis("Vertical") * forwardAccel;
+            //Ýleri geri movement için
+            speedInput = 0f;
+
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                speedInput = Input.GetAxis("Vertical") * forwardAccel;
+            }
+            else if (Input.GetAxis("Vertical") < 0)
+            {
+                speedInput = Input.GetAxis("Vertical") * reverseAccel;
+            }
+
+            //Saða sola  movement için
+            turnInput = Input.GetAxis("Horizontal");
+
+            /* if(grounded && Input.GetAxis("Vertical") != 0)
+            {
+                transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f)); //mathf.sign deðerin pozitif ya da negatif oldugun usöylüyor. saða sola kaydýrýrken daha smooth ve düzgün görükmesini saðladýk bu sayede
+            } */
         }
-        else if(Input.GetAxis("Vertical") < 0)
+        else //for AI cars pointleri takip etmelerini saðla
         {
-            speedInput = Input.GetAxis("Vertical") * reverseAccel;
+            targetPoint.y = transform.position.y; //y eksenini hesaplamalara dahil etme.
+
+            if(Vector3.Distance(transform.position, targetPoint) < aiReachPointRange) //eðer arabamýn pozisyonu target pozisyona olan uzaklýgý beklenilenden daha küçükse
+            {
+                currentTarget++;
+
+                if (currentTarget >= RaceManager.instance.allCheckPoints.Length)
+                {
+                    currentTarget = 0;
+                }
+
+                targetPoint = RaceManager.instance.allCheckPoints[currentTarget].transform.position;
+                RandomiseAITarget();
+            }
+
+            Vector3 targetDirection = targetPoint - transform.position;
+            float angle = Vector3.Angle(targetDirection, transform.forward); //yüz oryantasyonumun gitmem gereken target ile yaptýgý açý. her updatede bu açý kapancak ve o noktaya ulasacagým.
+
+            Vector3 localPos = transform.InverseTransformPoint(targetPoint);
+            if(localPos.x < 0f) //solumda kalýyor. gideceðim point.
+            {
+                angle = -angle;
+            }
+
+            turnInput = Mathf.Clamp(angle / aiMaxTurn, -1f, 1f);
+
+            if(Mathf.Abs(angle) < aiMaxTurn) //arabalarýn full turn atmasýný engelle
+            {
+                aiSpeedInput = Mathf.MoveTowards(aiSpeedInput, 1f, aiAccelerateSpeed); //ivme kazanarak hýzlansýn
+            }
+            else //o noktaya daha tutarlý yaklasmasý için yavaslamasý lazým. çünkü açýsý çok yüksek
+            {
+                aiSpeedInput = Mathf.MoveTowards(aiSpeedInput, aiTurnSpeed, aiAccelerateSpeed);
+            }
+
+            // aiSpeedInput = 1f; //hep full speed gitmesin
+            speedInput = aiSpeedInput * forwardAccel;
+
         }
 
-        //Saða sola  movement için
-        turnInput = Input.GetAxis("Horizontal");
-
-        /* if(grounded && Input.GetAxis("Vertical") != 0)
-        {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f)); //mathf.sign deðerin pozitif ya da negatif oldugun usöylüyor. saða sola kaydýrýrken daha smooth ve düzgün görükmesini saðladýk bu sayede
-        } */
 
         //Tekerler
         leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftFrontWheel.localRotation.eulerAngles.z);
@@ -158,4 +221,55 @@ public class CarController : MonoBehaviour
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f)); //mathf.sign deðerin pozitif ya da negatif oldugun usöylüyor. saða sola kaydýrýrken daha smooth ve düzgün görükmesini saðladýk bu sayede
         }
     }
+
+    public void CheckPointHit(int cpNumber)
+    {
+        if(cpNumber == nextCheckPoint)
+        {
+            nextCheckPoint++;
+
+            if(nextCheckPoint == RaceManager.instance.allCheckPoints.Length)
+            {
+                nextCheckPoint = 0;
+                LapCompleted();
+            }
+        }
+
+        if (isAI)
+        {
+            if (cpNumber == currentTarget)
+            {
+                SetNextAITarget();
+            }
+        }
+
+    }
+
+    public void SetNextAITarget()
+    {
+        currentTarget++;
+
+        if (currentTarget >= RaceManager.instance.allCheckPoints.Length)
+        {
+            currentTarget = 0;
+        }
+
+        targetPoint = RaceManager.instance.allCheckPoints[currentTarget].transform.position;
+        RandomiseAITarget();
+    }
+
+    public void LapCompleted()
+    {
+        currentLap++;
+        if (!isAI)
+        {
+            UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
+        }
+    }
+
+    public void RandomiseAITarget() //checkpointleri random olsun 
+    {
+        targetPoint = targetPoint + new Vector3(Random.Range(-aiPointVariance, aiPointVariance), 0f, Random.Range(-aiPointVariance, aiPointVariance));
+    }
+
 }

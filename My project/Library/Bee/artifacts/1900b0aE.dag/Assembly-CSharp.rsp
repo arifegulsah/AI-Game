@@ -323,7 +323,11 @@
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/CameraSwitcher.cs"
 "Assets/Scripts/CarController.cs"
+"Assets/Scripts/CheckPointChecker.cs"
+"Assets/Scripts/CheckPoints.cs"
 "Assets/Scripts/PlaySoundOnHit.cs"
+"Assets/Scripts/RaceManager.cs"
+"Assets/Scripts/UIManager.cs"
 -langversion:8.0
 
 /deterministic

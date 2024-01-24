@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: isAI
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+      propertyPath: aiMaxTurn
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3362459593767117665, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2466,6 +2470,10 @@ PrefabInstance:
     - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
       propertyPath: isAI
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+      propertyPath: aiMaxTurn
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3362459593767117665, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
       propertyPath: m_RootOrder
@@ -5333,6 +5341,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+      propertyPath: isAI
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3362459593767117665, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5381,6 +5393,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Car
       objectReference: {fileID: 0}
+    - target: {fileID: 5500702327589736283, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e04b1a35d2a43e0458da13de52a038d6, type: 2}
+    - target: {fileID: 5525321739079868215, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e04b1a35d2a43e0458da13de52a038d6, type: 2}
+    - target: {fileID: 5525321739079868215, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: e04b1a35d2a43e0458da13de52a038d6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
 --- !u!4 &880998486 stripped
@@ -5393,7 +5417,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
   m_PrefabInstance: {fileID: 880998485}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1319360495}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b4dcd59530eec1469f949f488101f0b, type: 3}
@@ -7801,6 +7825,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 4243275ff5130a5438ef97223ee76672, type: 3}
   m_PrefabInstance: {fileID: 203086726}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1319360495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3362459593767117667, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+  m_PrefabInstance: {fileID: 880998485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &1319360496
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319360495}
+  m_Enabled: 1
 --- !u!4 &1324069308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7c16b94cf88150a4a9b0a48148025bfd, type: 3}
@@ -7814,12 +7851,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
-      propertyPath: isAI
+      propertyPath: aiMaxTurn
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+      propertyPath: aiTurnSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+      propertyPath: aiAccelerateSpeed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
-      propertyPath: aiMaxTurn
-      value: 15
+      propertyPath: aiReachPointRange
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3362459593767117665, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
       propertyPath: m_RootOrder
@@ -7835,7 +7880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3362459593767117665, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.69
+      value: 9.97
       objectReference: {fileID: 0}
     - target: {fileID: 3362459593767117665, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7869,20 +7914,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI Car
       objectReference: {fileID: 0}
-    - target: {fileID: 5500702327589736283, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: e4392646299009049b528c57f35d5c22, type: 2}
-    - target: {fileID: 5525321739079868215, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: e4392646299009049b528c57f35d5c22, type: 2}
-    - target: {fileID: 5525321739079868215, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
-      propertyPath: m_Materials.Array.data[4]
-      value: 
-      objectReference: {fileID: 2100000, guid: e4392646299009049b528c57f35d5c22, type: 2}
-    m_RemovedComponents:
-    - {fileID: 3362459593767117670, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
 --- !u!1 &1327181852
 GameObject:
@@ -9240,6 +9272,10 @@ PrefabInstance:
       propertyPath: isAI
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+      propertyPath: aiMaxTurn
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3362459593767117665, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -10447,6 +10483,14 @@ PrefabInstance:
     - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
       propertyPath: isAI
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+      propertyPath: aiMaxTurn
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362459593767117664, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
+      propertyPath: aiReachPointRange
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3362459593767117665, guid: 14b4d0ecc8ade3742b58893e0c3098f6, type: 3}
       propertyPath: m_RootOrder

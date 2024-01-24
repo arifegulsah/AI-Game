@@ -19852,7 +19852,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3362459593767117665}
   - component: {fileID: 3362459593767117664}
-  - component: {fileID: 3362459593767117670}
   m_Layer: 0
   m_Name: Player Car
   m_TagString: Untagged
@@ -19919,14 +19918,13 @@ MonoBehaviour:
   tireSound: {fileID: 3362459592330893769}
   tireFadeSpeed: 2
   currentLap: 1
---- !u!81 &3362459593767117670
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3362459593767117667}
-  m_Enabled: 1
+  isAI: 1
+  currentTarget: 0
+  aiAccelerateSpeed: 1
+  aiTurnSpeed: 0.8
+  aiReachPointRange: 5
+  aiPointVariance: 3
+  aiMaxTurn: 15
 --- !u!1001 &3362459593135596911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19978,20 +19976,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2160538185192768936, guid: 998b4fa2f77cd5b468cdf002442b2959, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e4392646299009049b528c57f35d5c22, type: 2}
+    - target: {fileID: -2160538185192768936, guid: 998b4fa2f77cd5b468cdf002442b2959, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: e4392646299009049b528c57f35d5c22, type: 2}
+    - target: {fileID: -2089757431321777612, guid: 998b4fa2f77cd5b468cdf002442b2959, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e4392646299009049b528c57f35d5c22, type: 2}
     - target: {fileID: -927199367670048503, guid: 998b4fa2f77cd5b468cdf002442b2959, type: 3}
       propertyPath: m_Name
       value: sedanSports
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 998b4fa2f77cd5b468cdf002442b2959, type: 3}
---- !u!4 &8039032980435753903 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4699993055987924672, guid: 998b4fa2f77cd5b468cdf002442b2959, type: 3}
-  m_PrefabInstance: {fileID: 3362459593135596911}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7360792892447361553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5228416442750742398, guid: 998b4fa2f77cd5b468cdf002442b2959, type: 3}
+  m_PrefabInstance: {fileID: 3362459593135596911}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8039032980435753903 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4699993055987924672, guid: 998b4fa2f77cd5b468cdf002442b2959, type: 3}
   m_PrefabInstance: {fileID: 3362459593135596911}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7769676797891448437 stripped

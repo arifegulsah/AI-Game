@@ -42,7 +42,7 @@ public class CarController : MonoBehaviour
     private Vector3 targetPoint;
     public float aiAccelerateSpeed = 1f, aiTurnSpeed = .8f, aiReachPointRange = 5f, aiPointVariance = 3f, aiMaxTurn = 15f;
     //           ivmeleri              , dönerken yavasla , rangee girince next point hesapla yoksa hepsi ayný ilerler.  
-    private float aiSpeedInput;
+    private float aiSpeedInput, aiSpeedMod;
 
     public void Start()
     {
@@ -54,6 +54,8 @@ public class CarController : MonoBehaviour
         {
             targetPoint = RaceManager.instance.allCheckPoints[currentTarget].transform.position;
             RandomiseAITarget();
+
+            aiSpeedMod = Random.Range(.8f, 1.1f);
         }
 
         UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
@@ -88,15 +90,7 @@ public class CarController : MonoBehaviour
 
             if(Vector3.Distance(transform.position, targetPoint) < aiReachPointRange) //eðer arabamýn pozisyonu target pozisyona olan uzaklýgý beklenilenden daha küçükse
             {
-                currentTarget++;
-
-                if (currentTarget >= RaceManager.instance.allCheckPoints.Length)
-                {
-                    currentTarget = 0;
-                }
-
-                targetPoint = RaceManager.instance.allCheckPoints[currentTarget].transform.position;
-                RandomiseAITarget();
+                SetNextAITarget();
             }
 
             Vector3 targetDirection = targetPoint - transform.position;
@@ -119,8 +113,8 @@ public class CarController : MonoBehaviour
                 aiSpeedInput = Mathf.MoveTowards(aiSpeedInput, aiTurnSpeed, aiAccelerateSpeed);
             }
 
-            // aiSpeedInput = 1f; //hep full speed gitmesin
-            speedInput = aiSpeedInput * forwardAccel;
+            //aiSpeedInput = 1f; //hep full speed gitmesin
+            speedInput = aiSpeedInput * forwardAccel * aiSpeedMod;
 
         }
 
@@ -216,7 +210,7 @@ public class CarController : MonoBehaviour
 
         transform.position = theRB.position;
 
-        if (grounded && Input.GetAxis("Vertical") != 0)
+        if (grounded && speedInput != 0)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f)); //mathf.sign deðerin pozitif ya da negatif oldugun usöylüyor. saða sola kaydýrýrken daha smooth ve düzgün görükmesini saðladýk bu sayede
         }
@@ -269,7 +263,7 @@ public class CarController : MonoBehaviour
 
     public void RandomiseAITarget() //checkpointleri random olsun 
     {
-        targetPoint = targetPoint + new Vector3(Random.Range(-aiPointVariance, aiPointVariance), 0f, Random.Range(-aiPointVariance, aiPointVariance));
+        targetPoint += new Vector3(Random.Range(-aiPointVariance, aiPointVariance), 0f, Random.Range(-aiPointVariance, aiPointVariance));
     }
 
 }

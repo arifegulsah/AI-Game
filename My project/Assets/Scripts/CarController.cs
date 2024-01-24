@@ -30,6 +30,8 @@ public class CarController : MonoBehaviour
     public float emissionFadeSpeed = 50f;
     private float emissionRate;
 
+    public AudioSource engineSound, tireSound;
+    public float tireFadeSpeed;
 
     public void Start()
     {
@@ -55,17 +57,17 @@ public class CarController : MonoBehaviour
         //Saða sola  movement için
         turnInput = Input.GetAxis("Horizontal");
 
-        if(grounded && Input.GetAxis("Vertical") != 0)
+        /* if(grounded && Input.GetAxis("Vertical") != 0)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f)); //mathf.sign deðerin pozitif ya da negatif oldugun usöylüyor. saða sola kaydýrýrken daha smooth ve düzgün görükmesini saðladýk bu sayede
-        }
+        } */
 
         //Tekerler
         leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftFrontWheel.localRotation.eulerAngles.z);
         rightFrontWheel.localRotation = Quaternion.Euler(rightFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn), rightFrontWheel.localRotation.eulerAngles.z);
 
 
-        transform.position = theRB.position;
+        //transform.position = theRB.position;
 
         //Particle System Ýçin
         emissionRate = Mathf.MoveTowards(emissionRate, 0f, emissionFadeSpeed * Time.deltaTime);
@@ -87,6 +89,23 @@ public class CarController : MonoBehaviour
             emissionModule.rateOverTime = emissionRate;
         }
 
+
+        if(engineSound != null)
+        {
+            engineSound.pitch = 1f + ((theRB.velocity.magnitude / maxSpeed) / 2f); //hýzlandýkça engine sesi artsýn.
+        }
+
+        if(tireSound != null)
+        {
+            if(Mathf.Abs(turnInput) > .5f)
+            {
+                tireSound.volume = 1f;
+            }
+            else
+            {
+                tireSound.volume = Mathf.MoveTowards(tireSound.volume, 0f, tireFadeSpeed * Time.deltaTime); //bi anda kaybolmasýn ses azalarak bitsin.
+            }
+        }
     }
 
     public void FixedUpdate() //oyuncularýn görmediði yüksek frekanslý hesaplamalar yapýlýyo. .2 sn default
@@ -130,6 +149,13 @@ public class CarController : MonoBehaviour
         if (theRB.velocity.magnitude > maxSpeed)
         {
             theRB.velocity = theRB.velocity.normalized * maxSpeed;
+        }
+
+        transform.position = theRB.position;
+
+        if (grounded && Input.GetAxis("Vertical") != 0)
+        {
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Mathf.Sign(speedInput) * (theRB.velocity.magnitude / maxSpeed), 0f)); //mathf.sign deðerin pozitif ya da negatif oldugun usöylüyor. saða sola kaydýrýrken daha smooth ve düzgün görükmesini saðladýk bu sayede
         }
     }
 }
